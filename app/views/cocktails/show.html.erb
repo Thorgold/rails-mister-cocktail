@@ -1,16 +1,23 @@
-<h1><%=@cocktail.name%></h1>
+<h1><%=@cocktail.name.upcase %></h1>
 
-<h2>DOSES:</h2>
-
+<h2>Doses:</h2>
 <ul>
   <% @cocktail.doses.each do |dose| %>
   <li><%= dose.ingredient.name %> - <%= dose.description %> </li>
   <% end %>
-
 </ul>
 
+<h3>Add Dose:</h3>
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+<%= f.input :description %>
+<%= f.input :ingredient_id, collection: Ingredient.all %>
+<%= f.hidden_field :cocktail_id, value: @cocktail.id %>
+<%= f.submit "add dose", class: "btn btn-primary" %>
+<% end %>
 
 
-<%= link_to "return", cocktails_path %>
-<%= link_to "add dose", new_cocktail_dose_path(@cocktail) %>
+<div class="buttons">
+<%= link_to "return", cocktails_path, class: "btn btn-primary" %>
+<%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete,  class: "btn btn-primary" %>
+</div>
 
