@@ -1,7 +1,9 @@
-<%= form_for(@dose) do |f| %>
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
 <%= f.input :description %>
-<%= f.input :ingredient, category: { in: Ingredient.all} %>
+<%= f.input :ingredient_id, collection: Ingredient.all %>
+<%= f.hidden_field :cocktail_id, value: @cocktail.id %>
 <%= f.submit "submit" %>
 <% end %>
 
-<%= link_to "return", doses_path %>
+<%= link_to "return", cocktails_path %>
+
