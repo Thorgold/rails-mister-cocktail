@@ -1,0 +1,7 @@
+<%= form_for(@dose) do |f| %>
+<%= f.input :description %>
+<%= f.input :ingredient, category: { in: Ingredient.all} %>
+<%= f.submit "submit" %>
+<% end %>
+
+<%= link_to "return", doses_path %>
