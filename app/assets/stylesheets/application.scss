@@ -22,3 +22,41 @@ body {
 .buttons {
   margin-top: 15px;
 }
+
+.formo {
+  margin-top: 15px;
+}
+
+.row {
+  padding: 10px;
+}
+
+h1 {
+  font-size: 150px;
+  text-transform: uppercase;
+  text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+.card {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 15px;
+  background: #9B2F25;
+  opacity: 0.8;
+}
+
+.card:hover {
+  opacity: 1;
+
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+.thelink {
+  display: block;
+  height: 100%;
+}
