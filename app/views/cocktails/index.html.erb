@@ -1,10 +1,12 @@
 <h1>Cocktail list</h1>
 
-<div class="cards row">
+<div class="container">
+
+<div class="cards row ">
   <% @cocktails.each do |cocktail| %>
-  <div class="card col-xs-12 col-sm-4 col-lg-2">
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    <%= link_to "", cocktail_path(cocktail), class: "thelink" %>
+  <div class="card col-xs-12 col-sm-4 col-lg-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path cocktail.photo.path, height: 300, width: 400, crop: :fill %>')">
+    <%= link_to cocktail.name.upcase, cocktail_path(cocktail), class: "thelink" %>
     </div>
 
   <% end %>
@@ -13,4 +15,5 @@
 
 <div class="buttons">
   <%= link_to "Create new cocktail", new_cocktail_path, class: "btn btn-primary"%>
+</div>
 </div>

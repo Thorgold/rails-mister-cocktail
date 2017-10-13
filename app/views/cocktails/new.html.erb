@@ -1,9 +1,13 @@
+<h2>Add New Cocktail:</h2>
+
+
 <div class="formo">
 <%= simple_form_for(@cocktail) do |f| %>
 <%= f.input :name %>
+<%= f.input :photo, as: :attachinary, class: "btn btn-primary"%>
 <%= f.submit "submit", class: "btn btn-primary"%>
 <% end %>
 </div>
-
+<p><%= "" %></p>
 <%= link_to "return", cocktails_path, class: "btn btn-primary"%>
 
