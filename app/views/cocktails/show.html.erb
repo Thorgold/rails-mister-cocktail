@@ -4,7 +4,7 @@
   <%= cl_image_tag @cocktail.photo.path, width: 500, height: 500, crop: :fill %>
 <% end %>
 
-<h2 style="font-size: 25px;">Doses:</h2>
+<h2 style="font-size: 25px;">Ingredients:</h2>
 <ul>
   <% @cocktail.doses.each do |dose| %>
   <li><%= dose.ingredient.name %> - <%= dose.description %> </li>
@@ -21,7 +21,7 @@
 
 
 <div class="buttons">
-<%= link_to "return", cocktails_path, class: "btn btn-primary" %>
-<%= link_to "Delete Cocktail", cocktail_path(@cocktail), method: :delete,  class: "btn btn-primary" %>
+<%= link_to "Return", cocktails_path, class: "btn btn-primary" %>
+<%= link_to "Delete Drink", cocktail_path(@cocktail), method: :delete,  class: "btn btn-primary" %>
 </div>
 
